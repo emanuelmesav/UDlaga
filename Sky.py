@@ -1,7 +1,5 @@
 import random
 
-from numpy import quantile
-
 class Sky:
 
     def __init__(self, width, heigth, quantity):
