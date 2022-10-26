@@ -1,11 +1,10 @@
 
-
 class Ship:
 
-    def __init__(self, x):
+    def __init__(self):
         self.direction="UP"
-        self.x=x
-        self.y=0
+        self.x=368
+        self.y=710
 
     def move(self):
         
@@ -13,6 +12,8 @@ class Ship:
            self.x-=1
         elif self.direction=="RIGTH":
             self.x+=1
+        elif self.direction=="STOP":
+            pass
         
         return (self.x)
     
