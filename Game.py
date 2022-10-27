@@ -10,7 +10,7 @@ class Game:
 
             self.witdh=800
             self.heigth=800
-            self.mySky=Sky(self.witdh, self.heigth,1000)
+            self.mySky=Sky(self.witdh, self.heigth,200)
             self.ship=Ship()
             self.bullet=Bullet()
             self.screen=pygame.display.set_mode((self.witdh, self.heigth))
@@ -20,6 +20,7 @@ class Game:
             self.sprites=pygame.image.load("Galaga sprites.png")
             self.shipsprite=pygame.Surface((64, 64)).convert()
             self.shipsprite.blit(self.sprites, (0,0), (250, 436, 64, 64))
+            self.shipsprite.set_colorkey(0,0)
             self.spritesbullet=pygame.image.load("bullet(1).png").convert()
             self.spritesbullet.set_colorkey(0,0)
     def checkKeys(self):
@@ -50,7 +51,7 @@ class Game:
                     r=random.randint(0,255)
                     g=random.randint(0,255)
                     b=random.randint(0,255)
-                    pygame.draw.circle(self.screen, (r,g,b), star, 1)
+                    pygame.draw.circle(self.screen, (r,g,b), star, 2)
                 
                 if self.ship.x > self.witdh-64 : self.ship.x=self.witdh-64
                 if self.ship.x < self.witdh-790 : self.ship.x=self.witdh-790
